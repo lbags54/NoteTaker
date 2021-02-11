@@ -32,6 +32,17 @@ const deleteNote = (id) => {
   });
 };
 
+//to assign IDs to saved notes
+const makeRandomID = () => {
+  let symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+  let randomStr = "note-";
+
+  for(var i = 0; i < 6; i++){
+    randomStr += symbols.charAt(Math.floor(Math.random() * symbols.length));
+  }
+  return randomStr;
+}
+
 // If there is an activeNote, display it, otherwise render empty inputs
 const renderActiveNote = () => {
   $saveNoteBtn.hide();
